@@ -1,25 +1,22 @@
 function clearDisplay() {
-    document.getElementById('display').value = '';
+    document.getElementById('display').textContent = '0';
 }
 
-function deleteLast() {
+function appendToDisplay(value) {
     const display = document.getElementById('display');
-    display.value = display.value.slice(0, -1);
-}
-
-function appendNumber(number) {
-    document.getElementById('display').value += number;
-}
-
-function appendOperator(operator) {
-    document.getElementById('display').value += operator;
+    if (display.textContent === '0') {
+        display.textContent = value;
+    } else {
+        display.textContent += value;
+    }
 }
 
 function calculate() {
     const display = document.getElementById('display');
     try {
-        display.value = eval(display.value);
-    } catch (error) {
-        display.value = 'Error';
+        display.textContent = eval(display.textContent) || '0';
+    } catch {
+        display.textContent = 'エラー';
     }
 }
+
