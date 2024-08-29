@@ -1,79 +1,86 @@
 body {
-    background-color: #f2ebe3;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f2f2f2;
     margin: 0;
+    font-family: 'Arial', sans-serif;
 }
 
-.calculator-container {
-    text-align: center;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px; /* 最大幅を指定 */
 }
 
 .calculator {
-    width: 220px;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     background-color: #fff;
-    border: 1px solid #ccc;
-    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%; /* 幅を100%に */
+    max-width: 300px; /* 最大幅を指定 */
+    margin-bottom: 10px;
 }
 
-.calculator-display {
-    width: calc(100% - 20px); /* 幅を調整してはみ出さないようにする */
-    height: 40px;
-    background-color: #fafafa;
-    border: none;
-    border-radius: 10px;
-    color: #333;
+.display {
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2em; /* フォントサイズを調整 */
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
     text-align: right;
-    padding: 5px 10px;
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.calculator-buttons {
+.buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+    gap: 1px; /* ボタン間の隙間を調整 */
 }
 
 .btn {
-    background-color: #eae4da;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 1.1em;
-    color: #333;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 10px; /* パディングを調整 */
+    font-size: 0.9em; /* フォントサイズを調整 */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn:hover {
-    background-color: #d6d0c4;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #e0e0e0;
 }
 
-.btn-equal {
-    grid-column: span 2;
-    background-color: #ffd700;
-    border: 1px solid #e1b700;
+.btn:active {
+    transform: scale(0.95);
 }
 
-.btn-equal:hover {
-    background-color: #e1b700;
-}
-
-.btn-zero {
+.zero {
     grid-column: span 2;
 }
 
-.calculator-info {
-    margin-top: 20px;
-    color: #333;
+.btn:nth-child(4n+1) {
+    background-color: #f9f9f9;
+}
+
+.btn:nth-child(4n+1):hover {
+    background-color: #e8e8e8;
+}
+
+.description {
+    width: 100%;
+    max-width: 300px; /* 最大幅を指定 */
+    text-align: center;
     font-size: 0.9em;
+    color: #555;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    height: auto;
+    line-height: 1.4em; /* 行間を調整して読みやすくする */
+    white-space: normal; /* 改行を許可 */
 }
+
